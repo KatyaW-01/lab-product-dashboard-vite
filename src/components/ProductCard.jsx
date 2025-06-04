@@ -3,11 +3,11 @@ import styles from '../styles/ProductCard.module.css';
 
 const ProductCard = ({ product }) => {
   let stock;
-
+  console.log(styles)
   if (product.inStock) {
-    stock = 'in-stock';
+    stock = styles.inStock;
   } else {
-    stock = 'out-of-stock';
+    stock = styles.outOfStock;
   }
   return (
     <div className={stock}>
