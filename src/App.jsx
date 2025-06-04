@@ -37,6 +37,12 @@ const App = () => {
   });
 
   // TODO: Implement logic to filter products based on availability
+  let content;
+  if (filteredProducts.length === 0) {
+    content = <p>No products available.</p>;
+  } else {
+    content = <ProductList products={filteredProducts} />;
+  }
 
   return (
     <div>
@@ -51,8 +57,8 @@ const App = () => {
       </div>
 
       {/* TODO: Render the ProductList component and pass filtered products */}
-
-      <ProductList products={filteredProducts} />
+    
+      {content}
       
     </div>
   );
