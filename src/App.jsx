@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ProductList from './components/ProductList';
 import Button from '@mui/material/Button';
+import { Container, Box } from '@mui/material'
 
 const App = () => {
   // TODO: Define initial product data
@@ -46,22 +47,25 @@ const App = () => {
   }
 
   return (
-    <div>
-      <h1>Product Dashboard</h1>
-      
-      {/* TODO: Add buttons to allow filtering by availability */}
-
+    <Container maxWidth="sm">
       <div>
-        <Button variant="contained" onClick={() => setFilter('all')}>All</Button>
-        <Button variant="contained" onClick={() => setFilter('inStock')}>In Stock</Button>
-        <Button variant="contained" onClick={() => setFilter('outOfStock')}>Out of Stock</Button>
-      </div>
+        <h1>Product Dashboard</h1>
+        
+        {/* TODO: Add buttons to allow filtering by availability */}
+        <Box sx={{mb: 2}}>
+          <div>
+            <Button variant="contained" onClick={() => setFilter('all')} sx={{mr:1}}>All</Button>
+            <Button variant="contained" onClick={() => setFilter('inStock')} sx={{mr:1}}>In Stock</Button>
+            <Button variant="contained" onClick={() => setFilter('outOfStock')} sx={{mr:1}}>Out of Stock</Button>
+          </div>
+        </Box>
 
-      {/* TODO: Render the ProductList component and pass filtered products */}
-    
-      {content}
-      
-    </div>
+        {/* TODO: Render the ProductList component and pass filtered products */}
+        <Box sx={{border: 'solid 3px black'}}>
+          {content}
+        </Box>
+      </div>
+    </Container>
   );
 };
 
