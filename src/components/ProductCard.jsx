@@ -2,16 +2,18 @@ import React from 'react';
 import styles from '../styles/ProductCard.module.css';
 
 const ProductCard = ({ product }) => {
+  let stock;
+
+  if (product.inStock) {
+    stock = 'in-stock';
+  } else {
+    stock = 'out-of-stock';
+  }
   return (
-    <div className>
-      {/* TODO: Apply conditional class to <div> above for out-of-stock items */}
-      
-      {/* TODO: Display product name */}
+    <div className={stock}>
       <h1>{product.name}</h1>
-      {/* TODO: Display product price */}
       <p>{product.price}</p>
-      {/* TODO: Show if the product is in stock or out of stock */}
-      <p>In stock: {product.inStock}</p>
+      <p>{product.inStock ? 'In stock' : 'Out of stock'}</p>
     </div>
   );
 };
