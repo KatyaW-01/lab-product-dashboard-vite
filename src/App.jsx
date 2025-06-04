@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import { Container, Box } from '@mui/material'
 
 const App = () => {
-  // TODO: Define initial product data
+  
   const products = [
     {
       id: 1,
@@ -25,7 +25,7 @@ const App = () => {
       inStock: true
     }
   ];
-  // TODO: Implement state to manage filtering
+ 
   const [filter,setFilter] = useState('all')
 
   const filteredProducts = products.filter(product => {
@@ -38,7 +38,7 @@ const App = () => {
     }
   });
 
-  // TODO: Implement logic to filter products based on availability
+  
   let content;
   if (filteredProducts.length === 0) {
     content = <p>No products available.</p>;
@@ -51,7 +51,7 @@ const App = () => {
       <div>
         <h1>Product Dashboard</h1>
         
-        {/* TODO: Add buttons to allow filtering by availability */}
+        
         <Box sx={{mb: 2}}>
           <div>
             <Button variant="contained" onClick={() => setFilter('all')} sx={{mr:1}}>All</Button>
@@ -60,11 +60,12 @@ const App = () => {
           </div>
         </Box>
 
-        {/* TODO: Render the ProductList component and pass filtered products */}
+       
         <Box sx={{border: 'solid 3px black'}}>
           {content}
         </Box>
       </div>
+      
     </Container>
   );
 };
