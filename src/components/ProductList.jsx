@@ -6,7 +6,9 @@ const ProductList = ({ products }) => {
 
   return (
     <div>
-      {/* TODO: Iterate over the products array and render a ProductCard for each product */}
+      {products.map((product)=>(
+        <ProductCard id={product.id} product={product}/>
+      ))}
     </div>
   );
 };

@@ -24,6 +24,7 @@ const App = () => {
     }
   ];
   // TODO: Implement state to manage filtering
+  const [product,setProduct] = useState()
 
   // TODO: Implement logic to filter products based on availability
 
