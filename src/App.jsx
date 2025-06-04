@@ -24,19 +24,35 @@ const App = () => {
     }
   ];
   // TODO: Implement state to manage filtering
-  const [product,setProduct] = useState()
+  const [filter,setFilter] = useState('all')
+
+  const filteredProducts = products.filter(product => {
+    if (filter === 'inStock') {
+      return product.inStock; //where inStock is true 
+    } else if (filter === 'outOfStock') {
+      return !product.inStock; //where inStock is false
+    } else {
+      return true; //show all products 
+    }
+  });
 
   // TODO: Implement logic to filter products based on availability
 
   return (
     <div>
-      <h1>{/* TODO: Add 'Product Dashboard' title here */}</h1>
+      <h1>Product Dashboard</h1>
       
       {/* TODO: Add buttons to allow filtering by availability */}
 
+      <div>
+        <button onClick={() => setFilter('all')}>All</button>
+        <button onClick={() => setFilter('inStock')}>In Stock</button>
+        <button onClick={() => setFilter('outOfStock')}>Out of Stock</button>
+      </div>
+
       {/* TODO: Render the ProductList component and pass filtered products */}
 
-      <ProductList products={products} />
+      <ProductList products={filteredProducts} />
       
     </div>
   );
